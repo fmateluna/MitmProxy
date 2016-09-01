@@ -1,0 +1,52 @@
+[
+	{
+		"concept":"Informacion sensible en parametros",
+		"regex":"(&|\\?)([aA-zZ]|)+(?i)(rut|dni).*?=",
+		"description":"Dato de Rut expuesto en URL",
+		"severity":3
+	},	
+	{
+		"concept":"Informacion sensible en parametros",
+		"regex":"(&|\\?)([aA-zZ]|)+(?i)(pass|password|clave|contrasena|token).*?=",
+		"description":"Dato de constraseña expuesto en URL",
+		"severity":3
+	},	
+	{
+		"concept":"Informacion sensible en parametros",
+		"regex":"(&|\\?)([aA-zZ]|)+(?i)(cta|cuenta|cnta|cte).*?=",
+		"description":"Dato de cuenta corriente expuesto en URL",
+		"severity":2
+		
+	},	
+	{
+		"concept":"Informacion sensible en parametros",
+		"regex":"(&|\\?)([aA-zZ]|)+(?i)(monto|dinero|pago|dolar).*?=",
+		"description":"Dato contable expuesto en URL",
+		"severity":1
+	},	
+	{
+		"concept":"Informacion sensible en valores Hidden",
+		"regex":"(?i)(<input.*((type.*hidden).*(rut)|(rut).*(type.*hidden)).*>)",
+		"description":"Dato rut potencialmente modificable en valor oculto",
+		"severity":3
+	},	
+	{
+		"concept":"Informacion sensible en valores Hidden",
+		"regex":"(?i)(<input.*((type.*hidden).*(monto|dinero|pago|dolar)|(monto|dinero|pago|dolar).*(type.*hidden)).*>)",
+		"description":"Dato contable potencialmente modificable en valor oculto",
+		"severity":1
+		
+	},		
+	{
+		"concept":"Informacion sensible en valores Hidden",
+		"regex":"(?i)(<input.*((type.*hidden).*(pass|password|clave|contrasena|token)|(pass|password|clave|contrasena|token).*(type.*hidden)).*>)",
+		"description":"Dato tipo Clave o Token potencialmente modificable en valor oculto",
+		"severity":3	
+	},		
+	{
+		"concept":"Informacion sensible en valores Hidden",
+		"regex":"(?i)(<input.*((type.*hidden).*(cta|cuenta|cnta|cte)|(cta|cuenta|cnta|cte).*(type.*hidden)).*>)",
+		"description":"Dato tipo cuenta corriente potencialmente modificable en valor oculto",
+		"severity":2
+	}
+]
